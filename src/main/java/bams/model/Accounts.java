@@ -1,6 +1,6 @@
 package bams.model;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,8 +14,9 @@ public class Accounts {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	@Column(precision = 10, scale = 2)
 	private double balance;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "account")
 	private Users user;
 	
 	
@@ -56,7 +57,6 @@ public class Accounts {
 	}
 	public Accounts() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	

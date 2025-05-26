@@ -23,7 +23,7 @@ public class Users {
 	@Column(unique = true)
 	private long phone;
 	
-	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Accounts account;
 
 	@Override
