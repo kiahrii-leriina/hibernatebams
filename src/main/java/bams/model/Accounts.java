@@ -1,10 +1,10 @@
 package bams.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -15,9 +15,10 @@ public class Accounts {
 	private int id;
 	private String name;
 	private double balance;
-	@OneToOne
-	@JoinColumn(name = "user_id")
+	@OneToOne(cascade = CascadeType.ALL)
 	private Users user;
+	
+	
 	@Override
 	public String toString() {
 		return "Accounts [id=" + id + ", name=" + name + ", balance=" + balance + ", user=" + user + "]";

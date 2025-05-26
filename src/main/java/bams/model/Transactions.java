@@ -6,11 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Transactions {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -19,8 +19,9 @@ public class Transactions {
 	private double amount;
 	private Timestamp timestamp;
 	@ManyToOne
-	@JoinColumn(name = "accountid")
 	private Accounts account;
+	
+	
 	@Override
 	public String toString() {
 		return "Transactions [id=" + id + ", fromaccount=" + fromaccount + ", toaccount=" + toaccount + ", amount="
