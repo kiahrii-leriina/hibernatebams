@@ -9,12 +9,10 @@ import bams.util.JpaUtil;
 public class AccountDao {
 	
 	
-	public Accounts findAccount(int id) {
-		EntityManager em = JpaUtil.getEntityManager();
-		return em.find(Accounts.class, id);
-	
-		
+	public Accounts findAccount(int id, EntityManager em) {
+	    return em.find(Accounts.class, id);
 	}
+
 	
 	public void accountDetail(int id) {
 		

@@ -2,6 +2,7 @@ package bams.model;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +16,9 @@ public class Transactions {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private double amount;
+    @Column(name = "timestamp", nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp timestamp;
+
 
     @ManyToOne
     @JoinColumn(name = "from_account_id")
