@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-import bams.model.Accounts;
 import bams.model.Users;
 import bams.util.JpaUtil;
 

@@ -55,7 +55,6 @@ public class Main {
 				user.setPhone(phone);
 				user.setAccount(account);
 				
-				account.setUser(user);
 				userdao.saveUser(user);
 				
 				break;
