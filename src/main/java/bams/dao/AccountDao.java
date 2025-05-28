@@ -24,7 +24,7 @@ public class AccountDao {
 			System.out.println("No Account found");
 			throw new RuntimeException("No Account found");
 		}
-		System.out.printf("Account id: %d | Name: %s | Balance: %.2f | Users_id: %d \n",
+		System.out.printf("Account id: %d | Name: %s | Balance: %.2f  \n",
 				accounts.getId(),accounts.getName(),accounts.getBalance());
 		et.commit();
 		JpaUtil.close();

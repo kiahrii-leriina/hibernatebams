@@ -139,7 +139,10 @@ public class Main {
 				if(service.deposit(accountid, amount)){
 					System.out.println("Deposit successfull");
 				}
-				System.out.println("Deposit fail");
+				else {
+					
+					System.out.println("Deposit fail");
+				}
 				break;
 				
 			}
@@ -155,7 +158,10 @@ public class Main {
 				if(service.withdraw(accountid, amount)){
 					System.out.println("Withdraw successfull");
 				}
-				System.out.println("Withdraw fail");
+				else {
+					
+					System.out.println("Withdraw fail");
+				}
 				break;
 				
 			}

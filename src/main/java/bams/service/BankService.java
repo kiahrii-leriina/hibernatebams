@@ -39,7 +39,7 @@ public class BankService {
 	            return true;
 	        }
 	        return false;
-	    } catch (Exception e) {
+	        } catch (Exception e) {
 	        System.out.println("Transfer failed due to: " + e.getMessage());
 	        e.printStackTrace(); // 🔍 Show full stack trace
 	        if (et.isActive()) {
@@ -98,6 +98,8 @@ public class BankService {
 			Accounts account = accountdao.findAccount(id, em);
 			
 			account.setBalance(account.getBalance()+amount);
+			em.merge(account);
+			
 			et.commit();
 			return true;
 
